@@ -6,7 +6,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const GEMINI_API_KEY = "AIzaSyAKS4rsqK1cvkaT_6TfqvPWK7WDGbdZk3o"; // Your working key
+// ✅ use the key from Render's environment
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 app.post('/askgpt', async (req, res) => {
   const { message, behavior } = req.body;
